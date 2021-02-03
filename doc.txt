@@ -1,0 +1,16 @@
+try {
+  await this.$auth.loginWith('local', {
+    data: formData,
+  })
+  if (this.$auth.user.depth > 1) {
+    this.goTo('/cms/product')
+  } else {
+    this.goTo('/')
+  }
+} catch (error) {
+  if (error.response) {
+    // Get the error status, inform the user of the error.
+  }
+
+  // Unexpected error, tell the user to try again later.
+}
